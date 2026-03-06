@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            height: 650px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            gap: 10px;
+            grid-auto-flow: row;
+            grid-auto-rows: 1fr;
+            grid-template-areas:
+            "layout 1 layout 1 layout 2"
+            "layout 1 layout 1 layout 2"
+            "layout 3 layout 3 layout 3"
+            "layout 4 layout 5 layout 5"
+            "layout 4 layout 5 layout 5";
+        }
+        .box{
+            color: white;
+            background-color: navy;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box-1{
+            grid-area: layout 1;
+        }
+        .box-2{
+            grid-area: layout 2;
+        }
+        .box-3{
+            grid-area: layout 3;
+        }
+        .box-4{
+            grid-area: layout 4;
+        }
+        .box-5{
+            grid-area: layout 5;
+        }
+        .box-6{
+            grid-area: 7/1/9/3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box-1">Box 1</div>
+        <div class="box box-2">Box 2</div>
+        <div class="box box-3">Box 3</div>
+        <div class="box box-4">Box 4</div>
+        <div class="box box-5">Box 5</div>
+        <div class="box box-6">Box 6</div>
+        <div class="box box-7">Box 7</div>
+        <div class="box box-8">Box 8</div>
+        <div class="box box-9">Box 9</div>
+        <div class="box box-10">Box 10</div>
+    </div>
+</body>
+</html>

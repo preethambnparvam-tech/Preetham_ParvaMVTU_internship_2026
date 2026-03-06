@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Functions in JavaScript</h1>
+    <p>1. Function declaration</p>
+    <pre>
+        function fuc_name(parameter){
+            //code
+        }
+        fun_name(args);
+    </pre>
+    <p>2. Function Expression</p>
+    <pre>
+        const fun_name = function(parameter){
+            //code
+        }
+        fun_name(args);
+    </pre>
+    <p>3, Arrow function</p>
+    <pre>
+        const fun_name = (parameter) => {
+            //code
+        }
+        fun_name(args);
+    </pre>
+
+    //Functin Expression
+    <script>
+        const add = function(a,b){
+            return a+b;
+        }
+        const res = add(10,20);
+        console.log("Add :", res);
+
+        const sub = function(a,b){
+            console.log("Sub :", (a-b));
+        }
+        sub(10-20);
+
+        const mul = function(){
+            return 10*20;
+        }
+        const res1 = mul()
+            console.log("Mul :",res1);
+
+        const div = function() {
+            console.log("Div :", 10 / 2);
+        }
+        div();
+    </script>
+
+    //Arrow function
+
+    <script>
+        const add1 = (a,b) =>{
+            return a+b;
+        }
+        const res2 = add1(10,20);
+        console.log("Add1 :", res2);
+
+        const sub1 = (a,b) =>{
+            console.log("Sub1 :", (a-b));
+        }
+        sub1(10-20);
+
+        const mul1 = () =>{
+            return 10*20;
+        }
+        const res3 = mul1()
+            console.log("Mul1 :",res3);
+
+        const div1 = () => {
+            console.log("Div1 :", 10 / 2);
+        }
+        div1();
+    </script>
+</body>
+</html>

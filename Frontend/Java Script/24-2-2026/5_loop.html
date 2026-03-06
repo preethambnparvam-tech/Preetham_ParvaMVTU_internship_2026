@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loops in JavaScript</h1>
+    <p>1. for loop</p>
+    <p>2. while loop</p>
+    <p>3. do-while loop</p>
+    <p>4. for-of loop</p>
+    <p>5. foe-in loop</p>
+
+    <script>
+       let i = 5;
+    //    for(let j=1;j<=i;j++){
+    //     console.log(j);
+    //    }
+
+    for(let j = 1;j <= 10; j++){
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+
+    //for-of loop
+    const arr = [10,20,30,40,50];
+    for (let value of arr) {
+        console.log(value);
+    }
+
+    //for-in loop
+    const student = {
+        "firstName": "Preetham",
+        "age": 22
+    }
+    for(let key in student) {
+        console.log(`${key}: ${student[key]}`);
+    }
+    </script>
+</body>
+</html>

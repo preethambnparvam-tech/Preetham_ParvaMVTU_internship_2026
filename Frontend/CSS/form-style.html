@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-field{
+            margin: 20px;
+        }
+        label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+            color: brown;
+            text-transform: uppercase;
+        }
+
+        input:focus{
+            border: 10px solid green;
+        }
+
+        input[type="checkbox"],input[type="radio"],select{
+            color: blue;
+            width: auto;
+        }
+
+        input:checked{
+            outline: 2px solid red;
+        }
+
+        input:out-of-range{
+            border: 10px solid red;
+            background-color: lightcoral;
+            color: black;
+        }
+
+        input:required{
+            border: 2px solid red;
+        }
+        input:disabled{
+            background-color: lightcoral;
+        }
+        .btn-group{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            color: black;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 10px;
+            width: auto;
+            margin: 5px;
+        }
+
+        .submit-btn{
+            background-color: lightgreen;
+            color: green;
+        }
+        .reset-btn{
+            background-color: red;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <div class="form-field">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-field">
+            <label for="age">Age:</label>
+            <input type="number" min="1" max="100" name="age" id="age">
+        </div>
+        <div class="form-field">
+            <label for="email">Email ID:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="form-field">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div class="form-field">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="1234" disabled>
+        </div>
+        <div class="form-field">
+            <label for="address">Address:</label>
+            <textarea rows="10" cols="50" name="address" id="address"></textarea>
+        </div>
+        <div class="form-field">
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+        </div>
+        <div class="form-field">
+            <label for="subject">Favorite Subjects:</label>
+            <input type="checkbox" name="subject" id="physics" value="Physics">
+            <label for="physics">Physics</label>
+            <input type="checkbox" name="subject" id="chemistry" value="Chemistry">
+            <label for="chemistry">Chemistry</label>
+            <input type="checkbox" name="subject" id="mathematics" value="Mathematics">
+            <label for="mathematics">Mathematics</label>
+            <input type="checkbox" name="subject" id="computer-science" value="CS">
+            <label for="computer-science">Computer Science</label>
+        </div>
+<div class="form-field">
+            <label for="travelling-mode">Mode of Travelling:</label>
+            <select name="travelling-mode" id="travelling-mode">
+                <option value="">Select your Travelling Mode</option>
+                <option value="Bus">Bus</option>
+                <option value="Car">Car</option>
+                <option value="Bike">Bike</option>
+                <option value="Cab">Cab</option>
+                <option value="Metro">Metro</option>
+            </select>
+        </div>
+
+        <div class="form-field btn-group">
+        <input class="btn reset-btn" type="reset" value="Clear Form">
+        <input class="btn submit-btn" type=" submit" value="Submit Form">
+        </div>
+    </form>
+</body>
+</html>

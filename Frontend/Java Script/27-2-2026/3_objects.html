@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object in JavaScript</h1>
+    <p>Key value pair</p>
+
+    <script>
+        const obj1 ={
+            firstName:"Preetham",
+            lastName:"Gowda",
+            "Kannada marks": 90,
+            marks: 50.80,
+            isPass: true,
+            isWalking: () =>{
+                console.log("yes he is walking");
+            },
+            marks1: [20, 40, 50,60],
+            isSleeping: () =>{
+                return "yes he is sleeping";
+            },
+        }
+        for (let key in obj1){
+            console.log(`${key} : ${obj1[key]}`);
+        }
+
+        const key = Object.keys(obj1);
+        console.log(keys);
+        for (let key of keys) {
+            console.log(`${key} : ${obj1[key]}`);
+        }
+        console.log("first name: " ,obj1.firstName);
+        console.log("last name: ", obj1.lasttName);
+        console.log("Kannada marks: ", obj1["Kannada marks"]);
+        obj1.isWalking();
+        console.log(obj1.marks1[2]);
+        console.log(obj1.isSleeping());
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: grid;
+            height: 500px;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 10px;
+        }
+        .child{
+            background-color: crimson;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .layout-1{
+            background-color: green;
+            grid-column: 1/1;
+            /* grid-column-start: 1;
+            grid-column-end: 3; */
+            grid-row: 1/4;
+            /* grid-row-start: 1;
+            grid-row-end: 3; */
+        }
+        .layout-2{
+            background-color: green;
+            grid-column: 2/4;
+            grid-row:1/2;
+        }
+        .layout-3{
+            background-color: red;
+            grid-column: 4/5;
+            grid-row:1/2;
+        }
+        .layout-4{
+            background-color: yellow;
+            grid-column: 2/3;
+            grid-row: 2/3;
+            /* grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 5; */
+        }
+        .layout-5{
+            background-color: red;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .layout-6{
+            background-color: green;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+        .layout-7{
+            background-color: red;
+            grid-column: 2/3;
+            grid-row:3/4;
+        }
+        .layout-8{
+            background-color: yellow;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child layout-1">Layout 1</div>
+        <div class="child layout-2">Layout 2</div>
+        <div class="child layout-3">Layout 3</div>
+        <div class="child layout-4">Layout 4</div>
+        <div class="child layout-5">Layout 5</div>
+        <div class="child layout-6">Layout 6</div>
+        <div class="child layout-7">Layout 7</div>
+        <div class="child layout-8">Layout 8</div>
+    </div>
+</body>
+</html>

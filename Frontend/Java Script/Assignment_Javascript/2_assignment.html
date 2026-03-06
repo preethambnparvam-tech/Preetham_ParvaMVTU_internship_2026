@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Find Greatest of three numbers</h1>
+</body>
+
+<script>
+    let a = +prompt("Enter value of A:");
+    console.log("Value of A is: ",a);
+    let b = +prompt("Enter value of B:");
+    console.log("Value of B is: ",b);
+    let c = +prompt("Enter value of C:");
+    console.log("Value of C is: ",c);
+
+    if (a >= b && a >= c) {
+        greatest = a;
+        console.log("Greatest number is A: ", greatest);
+    } else if (b >= a && b >= c) {
+        greatest = b;
+        console.log("Greatest number is B: ", greatest);
+    } else {
+        greatest = c;
+        console.log("Greatest number is C: ", greatest);
+    }
+    
+</script>
+
+</html>

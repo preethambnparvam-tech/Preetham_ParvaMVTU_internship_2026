@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #static{
+            position:static; */
+            background-color: red; */
+            top: 100px;
+            left: 200px;
+        }
+
+        #relative{
+            position:relative;
+            left: 100px;
+            top: 10px;
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 2px solid rgb(66, 63, 63);
+
+        } */
+
+        .container{
+            position: relative;
+            background-color: yellowgreen;
+            width: 200px;
+            height: 400px;
+            
+        }
+
+        #child1{
+            position: absolute;
+            top:100px;
+            right: 300px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Position property:</h1>
+    <p>used to control the position</p>
+    <pre>
+        1.Position:Static
+        2.Position:Relative
+        3.Position:Absulute
+        4.Position:Fixed
+        5.Position:Sticky
+    </pre>
+    <div id="static">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt excepturi qui laboriosam doloribus, quam iure deleniti beatae itaque minima et velit facere adipisci nam, voluptate dolorem, dolores maiores quasi!
+
+    </div>
+
+    <div id="relative">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, nisi!
+    </div>
+    <div class="container">
+        <div id="child1">
+            Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+
+</body>
+</html>

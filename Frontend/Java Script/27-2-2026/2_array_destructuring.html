@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array Destructuring</h1>
+
+    <script>
+        const arr = ["item1", "item2", "item3", "item4", "item5"];
+        const var1 = arr[0];
+        const var2 = arr[1];
+        const var3 = arr[2];
+        const var4 = arr[3];
+        const var5 = arr[4];
+        console.log(var1, var2, var3, var4, var5);
+
+        const [v1, v2, v3, ...v4] = arr;
+        console.log(v1, v2, v3);
+        console.log(v4);
+
+        const [fi, , th, , f] = arr;
+        console.log(fi, th,f);
+    </script>
+</body>
+</html>

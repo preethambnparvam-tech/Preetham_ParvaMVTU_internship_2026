@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1>Registration Form:</h1>
+    <!-- get method sends the data through the URL -->
+    <!-- post method sends the data using HTTP(HyperText Transfer Protocol) -->
+     <!-- method - how to send -->
+     <!-- action - where to send -->
+    <form method="post" action="">
+        <!-- Self Closing Tags doesn't have any closing tags -->
+        <!-- text - we can enter anything -->
+
+        <label for="First Name">First Name</label>
+        <input type="text" name="first_name" id="first_name" placeholder="Enter your name" maxlength="25" required><br><br>
+
+        <label for="Last Name">Last Name</label>
+        <input type="text" name="last_name" id="last_name"><br><br>
+
+
+        Email Id: <input type="email" name="email_id" id="email_id" placeholder="Enter your email id"><br><br>
+
+
+        Password: <input type="password" name="password" id="password" placeholder="Enter your password"><br><br>
+
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="0" max="100"><br><br>
+
+
+        <label for="dob">DOB:</label>
+        <!-- yyyy-mm-dd -->
+        <input type="date" name="dob" min="2000-01-01" max="2026-02-04" id="dob"><br><br>
+
+
+        <label for="bweek">Birthday Week:</label>
+        <input type="week" name="bweek" id="bweek"><br><br>
+
+
+        <label for="bmonth">Birthday Month:</label>
+        <input type="month" name="bmonth" id="bmonth"><br><br>
+
+
+        <label for="dob_time">Birth Date with Time</label>
+        <input type="datetime-local" name="dob_time" id="dob_time"><br><br>
+
+
+        <label for="address">Address:</label>
+        <textarea rows="10" cols="50" name="address" id="address"></textarea><br><br>
+
+
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female" checked>
+        <label for="female">Female</label><br><br>
+
+
+        <label for="hobbies">Hobbies:</label>
+        <input type="checkbox" name="singing" id="singing" value="singing">
+        <label for="singing">Singing</label>
+        <input type="checkbox" name="dancing" id="dancing" value="dancing" checked>
+        <label for="dancing">Dancing</label>
+        <input type="checkbox" name="reading" id="reading" value="reading">
+        <label for="reading">Reading</label>
+        <input type="checkbox" name="travelling" id="travelling" value="travelling">
+        <label for="travelling">Travelling</label><br><br>
+
+
+        <label for="state">State</label>
+        <select name="state" id="state" multiple>
+            <option value="KA">Karnataka</option>
+            <option value="TN">Tamil Nadu</option>
+            <option value="MH" selected>Maharashtra</option>
+            <option value="GJ">Gujarat</option>
+            <option value="KL">Kerala </option>
+        </select><br><br>
+
+
+        <label for="photo">Upload Photo:</label>
+        <input type="file" name="photo" id="photo" accept="
+        image/*" multiple><br><br>
+
+
+        <label for="fav_color">Favourite Color</label>
+        <input type="color" name="fav_color" id="fav_color"><br><br>
+
+
+        <label for="rating">Rating</label>
+        <input type="range" name="rating" min="1" max="5" id="rating" value="5"><br><br>
+
+
+        <input type="reset" name="reset" id="reset">
+        <input type="submit" name="submit" id="submit">
+    </form>
+</body>
+
+
+</html>

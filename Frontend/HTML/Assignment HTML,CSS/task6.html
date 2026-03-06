@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../ParvaM Internship/Frontend/Bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <style>
+        .Heading-section{
+           background-color: lightblue;
+           padding-left: 20px;
+        }
+        .heading{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+        .nav-item{
+          padding-left:600px;
+          color: chocolate;
+          font-weight: bold;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h1::first-letter{
+         color:darkviolet;
+        }
+        .button{
+            width: 140px;
+            color: whitesmoke;
+           display: flex;
+           justify-content: center;
+           align-content: center;
+        }
+        #visionsection{
+           background-color: lightblue;
+           padding-left: 20px;
+        }
+        .order-list{
+          list-style-type: circle;
+        }
+        #departmentsection{
+          background-color: lightblue;
+           padding-left: 20px;
+
+        }
+        .foramt-table{
+          background-color: aqua;
+          color: whitesmoke;
+        }
+        #admissionsection{
+           background-color: lightblue;
+           padding-left: 20px;
+           align-items: center;
+
+        }
+        input{
+          margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-info ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="../Media/Images/College image/clg logo.jpeg" alt="" height="
+        70px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav nav-item">
+        <a class="nav-link active " aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">About US</a>
+        <a class="nav-link" href="#">Department & Academics</a>
+        <a class="nav-link" href="#">Admission Enquiry Form</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="homesection">
+  <div class="Heading-section">
+    <header>
+    <h1 class="text-success text-center ">Home Section</h1>
+    <p>Welcome to Amrutha Institute of Engineering and Management Sciences,  Bangalore. At Amrutha 
+      institute.  we Norture  Talent through Quality Education,Experience Faculty, Modern 
+      Infrastructure and Industry oriented Training programs. our Goals is to empower students 
+      with Knowledge,skills and Ethical Values  to succed In their Carrier.
+    We are Delighted to have Here. We hope Your Visit will be Informative.informing and enjoyable.
+    Amrutha Institute of Engineering and management sciences is a Repeated Institution  dedicated to
+    to provide quality Education. in Engineering and management to provide  quality  Engineering and
+    management Education Then Faster Technical Excellence.
+    </p>
+    </header>
+    <button class="btn  btn-outline-success button" 
+    onclick="document.getElementById('visionsection').style.display='block'">
+    Go to Vision and Control</button>
+  </div>
+</div>
+<div id="visionsection" style="display: none;">
+   <h1 class="text-center  heading">Mission and Vision Control</h1>
+   <p class="heading">About The Collage:</p>
+   <p>Amrutha Institute of Engineering  and Management Sciences,Bangalore  is a premier  Institute  
+    comitted to deliverying quality Education in Engineering and Management.The institute focus 
+    on academic Excellence,innovation Research and Holostic Student Devolopment.
+    Established with the Vision of creating skills professional and Resposible citizens
+   </p>
+   <ol class="order-list">
+    <li>Located in Bangalore ,Karnataka.</li>
+    <li> Offers Undergraduate and Post Graduate programs in Engineering  and 
+      management sciences.
+    </li>
+    <li>Experience and dedicated  Faculty  Members.</li>
+    <li>Smart Class room and  Advanced Learning Facilities.</li>
+    <li>dedicated placements and Career guidence Cell. </li>
+    <li>Provide A vibrant Campus Life with Curicular And Extra Curicular Activities.</li>
+   </ol>
+   <button class="
+   btn  btn-outline-success button" onclick="document.getElementById('departmentsection').
+   style.display='block'">Department</button>
+</div>
+<div id="departmentsection" style="display: none;">
+  <h1 class="heading text-center">Department and Academics</h1>
+  <p  class="heading">Department Lists:</p>
+  <ul type="circle">
+            <li>Computer Sciencs and Engineering</li>
+            <li>Electronics and Communication Engineering</li>
+            <li>Mechanical Engineering</li>
+            <li>Civil Engineering</li>
+   </ul>
+    <p class="heading">Faculty Details:</p>   
+   <table class="table foramt-table table-primary">
+  <thead>
+    <tr>
+      <th scope="col">Sl NO</th>
+      <th scope="col">Code</th>
+      <th scope="col">Subject Name</th>
+      <th scope="col">Faculty</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>BCS701</td>
+      <td>Internet Of Things</td>
+      <td>Anil Kumar</td>
+     
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>BCS702</td>
+      <td>Parallel Computing</td>
+      <td>Srinivas</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>BCS703</td>
+      <td>Cryptography</td>
+      <td>Manjunath T N</td>
+     </tr>
+      <tr>
+      <th scope="row">4</th>
+      <td>BCS714D</td>
+      <td>Big data Analytics</td>
+      <td>Ambika Patil</td>
+     </tr>
+  </tbody>
+</table> 
+<button class="btn  btn-outline-success button" onclick="document.getElementById('admissionsection').
+   style.display='block'">Admission-Section</button>       
+</div>
+<div id="admissionsection" style="display: none">
+  <h1 class="heading text-center">Admission-Section</h1>
+  <div>
+      <label for="Student Name">Student Name:</label>
+        <input type="text" name="Student_name" id="Student_name"
+         placeholder="Enter your name" required><br><br>
+  </div>
+  <div>
+      <label for="Email">Email-id:</label>
+        <input type="Email" name="Email-id" id="Email-id"
+         placeholder="Enter your Email" required><br><br>
+  </div>
+  <div>
+      <label for="Phone Number">Mobile Number:</label>
+        <input type="Number" name="Phone Number" id="Student_name"
+         placeholder="Enter your Mobile Number" required><br><br>
+  </div>
+  <div>
+    <label for="Gender">Male</label>
+    <input type="radio" name="gander" id="gender" value="Male">
+    <label for="Gender">Female</label>
+    <input type="radio" name="gander" id="gender" value="FeMale">
+  </div><br><br>
+  <div>
+    <label for="State">Karnataka</label>
+    <input type="checkbox" name="State" id="state" value="Karnataka">
+    <label for="State">Tamil nadu</label>
+    <input type="checkbox" name="State" id="state" value="Tamil nadu">
+    <label for="State">Kerala</label>
+    <input type="checkbox" name="State" id="state" value="Kerala">
+    <label for="State">Andra pradesha</label>
+    <input type="checkbox" name="State" id="state" value="Andra pradesha">
+    <label for="State">Bhoopal</label>
+    <input type="checkbox" name="State" id="state" value="Bhoopal">
+
+  </div>
+</div>
+<script src="../Frontend/Bootstrap/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

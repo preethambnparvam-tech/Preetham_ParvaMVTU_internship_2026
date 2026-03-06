@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch API</h1>
+    <div id="container"></div>
+
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/posts";
+        const fetchData = async () => {
+            const res = await fetch(url);
+            const jsonResponse = await res.json();
+            // console.log(jsonResponse);
+            jsonResponse.forEach((ele) => {
+                const h1 = document.createElement("h1");
+                h1.innerText = ele.userId;
+
+                const h3 = document.createElement("h3");
+                h3.innerText = ele.id;
+
+                const p = document.createElement("p");
+                p.innerText = ele.title;
+
+                const div = document.createElement("div");
+                div.innerText = ele.body;
+
+                const hr = document.createElement("hr");
+                div.appendChild(hr);
+
+                const parent = document.createElement("div");
+                parent.appendChild(h1);
+                parent.appendChild(h3);
+                parent.appendChild(p);
+                parent.appendChild(div);
+
+                container.appendChild(parent);
+            })
+        }
+        fetchData();
+    </script>
+</body>
+
+</html>

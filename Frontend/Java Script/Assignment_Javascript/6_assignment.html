@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        input,
+        textarea {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Clipboard Events</h2>
+    <p>1. Copy Event</p>
+    <p>2. Cut Event</p>
+    <p>3. Paste Event</p>
+
+    <input type="text" id="textInput" placeholder="Type something here">
+
+    <div id="output"></div>
+
+    <script>
+        const input = document.getElementById("textInput");
+        const output = document.getElementById("output");
+
+        // Copy Event
+        input.addEventListener("copy", function () {
+            output.innerHTML = "Text Copied!";
+        });
+
+        // Cut Event
+        input.addEventListener("cut", function () {
+            output.innerHTML = "Text Cut!";
+        });
+
+        // Paste Event
+        input.addEventListener("paste", function (event) {
+            output.innerHTML = "Text Pasted!";
+        });
+    </script>
+
+</body>
+</html>

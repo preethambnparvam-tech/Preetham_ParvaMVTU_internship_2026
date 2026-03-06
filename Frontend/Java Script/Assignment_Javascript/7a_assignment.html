@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../Bootstrap/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">To Do List Application</h2>
+
+        <div class="input-group mb-3">
+            <input type="text" id="taskInput" class="form-control" placeholder="Enter Task">
+            <button class="btn btn-success" onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul id="taskList" class="list-group"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            let task = document.getElementById("taskInput").value
+            if (task === "") return
+            let li = document.createElement("li")
+            li.className = "list-group-item d-flex justify-content-between"
+            li.innerHTML = `<span onclick="completeTask(this)">${task}</span>
+             <button class="btn btn-danger btn-sm" onclick="deleteTask(this)">Delete</button>`
+            document.getElementById("taskList").appendChild(li)
+            document.getElementById("taskInput").value = ""
+        }
+        function deleteTask(btn) {
+            btn.parentElement.remove()
+        }
+        function completeTask(task) {
+            task.classList.toggle("completed")
+        }
+    </script>
+</body>
+
+</html>

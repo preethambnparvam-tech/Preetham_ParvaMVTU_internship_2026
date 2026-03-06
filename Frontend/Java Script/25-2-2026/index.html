@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        #child{
+            text-align: center;
+        }
+
+        #btn{
+            padding: 10px,20px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            /* background-color: ; */
+        }
+
+        #color_code{
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="child">
+            <h3 id="color_code"> </h3>
+            <button id="btn" onclick="handleclick()">Change BG</button>
+        </div>
+    </div>
+</body>
+<script>
+    function getBackground() {
+        const red = Math.floor(Math.random() *256);
+        const green = Math.floor(Math.random() *256);
+        const blue = Math.floor(Math.random() *256);
+        const rgb = `rgb(${red},${green},${blue})`;
+        return rgb;
+    }
+
+    function handleclick() {
+        const color = getBackground();
+        const con = document.getElementById("container");
+        con.style.backgroundColor = color;
+        const colorCode = document.getElementById("color_code");
+        colorCode.innerText = `Background color is: ${color}`;
+    }
+</script>
+
+</html>

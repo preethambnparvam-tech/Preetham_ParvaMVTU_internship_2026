@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Primitive vs Reference Type</h1>
+
+    <script>
+        let x = 40;
+        let y = x;
+        console.log(`Before Changing Value: x : ${x}`);
+        console.log(`Before Changing Value: y : ${y}`);
+        x = 50;
+        console.log(`After Changing Value: x : ${x}`);
+        console.log(`After Changing Value: y : ${y}`);
+
+        const arr = [1,2,3,4];
+        const arr2 = arr;
+        console.log(`Before Changing Value: arr : ${arr}`);
+        console.log(`Before Changing Value: arr2 : ${arr2}`);
+        arr.push(5);
+        console.log(`After Changing Value: arr : ${arr}`);
+        console.log(`After Changing Value: arr2 : ${arr2}`);
+    </script>
+</body>
+
+</html>

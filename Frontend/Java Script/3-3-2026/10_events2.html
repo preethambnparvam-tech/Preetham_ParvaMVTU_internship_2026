@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            width: 100px;
+            height: 50px;
+            border: 2px solid black;
+            background-color: yellow;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+        const container = document.getElementById("container");
+        let x = 0;
+        let y = 0;
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowUp") {
+                y -= 10;
+            } else if (e.key === "ArrowDown") {
+                y += 10;
+            }else if (e.key === "ArrowLeft") {
+                x -= 10;
+            } else if (e.key === "ArrowRight") {
+                x += 10;
+            }
+            container.style.top = y + "px";
+            container.style.left = x + "px";
+        })
+    </script>
+</body>
+
+</html>

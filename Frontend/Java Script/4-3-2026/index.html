@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #btn{
+            width: 300px;
+            padding: 8px 0px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color:aqua;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Async JS Project</h2>
+        <p id="date-time"></p>
+
+        <button type="button" id="btn">Stop</button>
+    </div>
+
+    <script>
+        const color = setInterval(() => {
+            const red = Math.floor(Math.random() *256);
+            const green = Math.floor(Math.random() *256);
+            const blue = Math.floor(Math.random() *256);
+            const backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            document.body.style.backgroundColor = backgroundColor;
+        }, 1000);
+
+        setInterval(() => {
+            const dateTime = document.getElementById("date-time");
+            dateTime.innerText = new Date();
+        },1000);
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            clearInterval(color);
+            btn.innerText = document.body.style.backgroundColor;
+        });
+    </script>
+</body>
+</html>

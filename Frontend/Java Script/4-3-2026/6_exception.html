@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exception handling</h1>
+
+    <script>
+        console.log(10 / 2);
+        console.log(2 / 0);
+        
+        try{
+            const obj = {
+                name: "Preetham"
+            }
+            console.log(obj.name1.age);
+        } catch (error) {
+            console.log(error);
+        } finally{
+            console.log("Closing resources");
+        }
+
+        console.log("3");
+        console.log("4");
+    </script>
+</body>
+</html>

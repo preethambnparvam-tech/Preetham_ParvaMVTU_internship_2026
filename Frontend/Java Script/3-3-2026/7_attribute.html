@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Atrribute in JavaScript</h1>
+    <p>1. getattribute</p>
+    <p>1. setattribute</p>
+
+    <a href="https://www.google.com/" target="_blank" id="link">Google</a>
+    <button id="btn">Change</button>
+
+    <script>
+        const link = document.getElementById("link");
+        console.log(link.getAttribute("href"));
+
+        document.getElementById("btn").addEventListener("click", () => {
+            link.setAttribute("href", "https://www.amazon.in/");
+            link.textContent = "amazon";
+        })
+    </script>
+</body>
+</html>

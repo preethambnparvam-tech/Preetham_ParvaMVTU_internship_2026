@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        body {
+            height: 2000px; 
+            font-family: Arial;
+            padding: 20px;
+        }
+        #output {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Window Events</h1>
+    <p>1. Load event</p>
+    <p>2. Resize event</p>
+    <p>3. Scroll event</p>
+
+    <div id="output">Waiting for events...</div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // Load Event
+        window.addEventListener("load", function () {
+            output.innerHTML = "Page Loaded Successfully!";
+        });
+
+        // Resize Event
+        window.addEventListener("resize", function () {
+            output.innerHTML = "Window Size: " +
+                window.innerWidth + " x " + window.innerHeight;
+        });
+
+        // Scroll Event
+        window.addEventListener("scroll", function () {
+            output.innerHTML = "Scroll Position: " + window.scrollY;
+        });
+    </script>
+</body>
+
+</html>

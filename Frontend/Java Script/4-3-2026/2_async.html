@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Asynchronous in JavaScript</h1>
+    <p>Asynchronous is used in api calls </p>
+    <p>1. setTimeout</p>
+    <p>2. setInterval</p>
+    <p>3. callback</p>
+    <p>4. promise</p>
+    <p>5. fetch api</p>
+
+    <script>
+        //synchronous
+        console.log("first");
+        console.log("second");
+        console.log("third");
+        console.log("forth");
+        console.log("fifth");
+
+        //Asynchronous
+        console.log("1");
+        console.log("2");
+
+        //setTimeout
+        setTimeout(() => {
+            console.log("async");
+        }, 3000);
+
+        console.log("3");
+        console.log("4");
+    </script>
+</body>
+</html>

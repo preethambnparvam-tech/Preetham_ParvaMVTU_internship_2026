@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2>Keyword Event</h2>
+<input type="text" id="inputBox" placeholder="Type here">
+
+<p id="output"></p>
+
+<script>
+    const input = document.getElementById("inputBox");
+    const output = document.getElementById("output");
+
+    input.addEventListener("keydown", function(event) {
+        output.innerHTML = "Key Down: " + event.key;
+    });
+
+    input.addEventListener("keyup", function(event) {
+        console.log("Key Released: " + event.key);
+    });
+</script>
+
+</body>
+</html>

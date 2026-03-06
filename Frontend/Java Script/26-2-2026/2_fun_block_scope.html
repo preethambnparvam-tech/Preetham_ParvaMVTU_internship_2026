@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functions and Block Scope</h1>
+    <p>1. Block Scope - {} - let and const</p>
+    <p>2. Functions Scope - var</p>
+
+    <script>
+        function fun() {
+            let a = 100;
+            var b = 300;
+            const c = 400;
+            if(true) {
+                let a = 300;
+                var b = 100;
+                const c = 500;
+                console.log("Inside Values :",a,b,c);
+            }
+            console.log("Outside Values :",a,b,c);
+        }
+        fun();
+    </script>
+</body>
+</html>

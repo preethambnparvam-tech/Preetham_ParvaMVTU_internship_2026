@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Input in JavaScript</h1>
+    <p>prompt - take input value</p>
+
+    <script>
+        const marks = +prompt("Enter the marks");
+        console.log("Your marks is: ",marks);
+        console.log("Type of marks is: ",typeof marks);
+
+        switch (marks) {
+            case 90:{
+                console.log("A");
+                break;
+            }
+             case 80:{
+                console.log("B");
+                break;
+            }
+             case 70:{
+                console.log("C");
+                break;
+            }
+             default:{
+                console.log("D");
+            }
+        }
+    </script>
+</body>
+</html>

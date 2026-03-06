@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            margin: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Click Me</div>
+    <button id="click1" onclick="handleClick()">Click1</button>
+    <button id="click2">Click2</button>
+    <button id="click3">Click3</button>
+    <button id="click4">Click4</button>
+
+<script>
+    const handleClick = () => {
+            console.log("Clicked the button");
+        }
+
+    const box = document.getElementById("box");
+
+    box.addEventListener("click", function() {
+        box.style.backgroundColor = "yellow";
+        box.innerHTML = "Clicked!";
+    });
+
+     const click2 = document.getElementById("click2");
+        click2.addEventListener("mouseover", () => {
+            handleClick();
+    });
+
+    const click3 = document.getElementById("click3");
+        click3.addEventListener("mouseout", () => {
+            handleClick();
+    });
+
+    const click4 = document.getElementById("click4");
+        click4.addEventListener("dblclick", () => {
+            handleClick();
+    });
+</script>
+</body>
+</html>
