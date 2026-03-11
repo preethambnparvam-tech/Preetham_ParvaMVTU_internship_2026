@@ -15,3 +15,5 @@ print(numbers[-9:])
 print(numbers[-9::3])
 
 print(numbers[0:9])
+
+print(numbers[0:9:3])
