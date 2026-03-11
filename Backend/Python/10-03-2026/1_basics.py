@@ -2,7 +2,7 @@
 #int,string,float,complex,boolean
 
 fname = "Preethem"
-lname = "Gowda"
+lname = "B N"
 print(fname)
 print(lname)
 print(fname, lname)

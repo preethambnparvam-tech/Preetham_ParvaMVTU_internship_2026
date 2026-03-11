@@ -36,7 +36,7 @@ basket = vegetables.copy()
 print(basket)
 
 #Extend
-fruits = ["Apple", "Banane", "Mango", "Apple"]
+fruits = ["Apple", "Banana", "Mango", "Apple"]
 basket.extend(fruits)
 print(basket) 
 
