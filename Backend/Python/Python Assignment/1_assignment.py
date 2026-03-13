@@ -40,6 +40,3 @@ print("Intersection_update:", set1)
 #difference_update(-=)
 set1 -= set2
 print("After Difference Update is:", set1)
-
-
-

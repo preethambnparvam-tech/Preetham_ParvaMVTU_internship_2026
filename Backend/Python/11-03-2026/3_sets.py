@@ -22,6 +22,7 @@ print("S1:", set1)
 
 set1.update(set2)
 print("S1 modifies to: ", set1)
+
 #intersection(&)
 print("Intersection of S1 and S2: ", set1.intersection(set2))
 
