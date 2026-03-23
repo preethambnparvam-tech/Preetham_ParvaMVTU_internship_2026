@@ -65,5 +65,3 @@ print(f"Is the sentence in uppercase? {"PREETHAM".isupper(), "Preetham".isupper(
 
 #title
 print(f"Is the sentence in title case? {"Preetham".istitle(), "preetham".istitle()}")
-
-#
