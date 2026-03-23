@@ -1,0 +1,13 @@
+OOPs - Object Oriented Programming
+
+It is a problem - solving approach
+
+Real World Entity
+
+Pillars of OOPs
+1. Class - Blueprint
+2. Object - Instance of a class
+3. Encapsulation - Wrapping data and methods into a single unit
+4. Inheritance - Deriving new classes from existing ones
+5. Polymorphism - Ability to take many forms
+6. Abstraction - Hiding internal details and showing only functionality
