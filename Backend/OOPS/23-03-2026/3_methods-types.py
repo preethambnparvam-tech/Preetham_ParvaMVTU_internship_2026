@@ -51,7 +51,7 @@ class Bank:
     #Static method does not require any default parameter, if given it accepts any parametr
     @staticmethod
     def enquiry():
-        print("For any enquiry, please contact us at 1800-123-456 or email us at support@sbi.com")
+        print("For any enquiry, please contact us at 1800-123-456 or email us at support@sbi.com \n")
 
 
 #New Account - object Creation
@@ -73,3 +73,57 @@ cust2.checkBalance()
 
 Bank.number_of_accounts()
 Bank.enquiry()
+
+# Employee
+# name, dob, email, phone, education, skills[list]
+
+# registration - generate id for employee and add to some dept
+
+# assign some work
+
+# employee work on that and mentions the time taken for work
+def generate_employee_id():
+    import random
+    return random.randint(1000, 9999)
+
+class Employee:
+    def __init__(self, name, dob, email, phone, education, skills):
+        self.name = name
+        self.dob = dob
+        self.email = email
+        self.phone = phone
+        self.education = education
+        self.skills = skills
+
+    def registration(self, department):
+        self.employee_id = generate_employee_id()
+        self.department = department
+        print(f"Employee {self.name} has been registered in {self.department} department with employee ID: {self.employee_id}")
+
+    def assignWork(self, work):
+        self.work = work
+        print(f"Employee {self.name} has been assigned the work: {self.work}")
+
+    def workOnTask(self, time_taken):
+        print(f"Employee {self.name} has completed the work: {self.work} in {time_taken} \n")
+
+employee1 = Employee(name = "Dhari", dob = "01-01-1990", email = "dhari@company.com", phone = "9876543210", education = "B.Tech", skills = ["Python", "Java"])
+
+employee2 = Employee(name = "Preetham", dob = "01-01-1992", email = "preetham@company.com", phone = "9876543211", education = "M.Tech", skills = ["Python", "C++"])
+
+employee3 = Employee(name = "Ravi", dob = "01-01-1994", email = "ravi@company.com", phone = "9876543212", education = "B.Tech", skills = ["Python", "JavaScript"])
+
+employee1.registration(department = "IT")
+employee1.assignWork(work = "Develop a web application")
+employee1.workOnTask(time_taken = "5 days") 
+
+
+employee2.registration(department = "IT")
+employee2.assignWork(work = "Debug the application")
+employee2.workOnTask(time_taken = "3 days") 
+
+
+employee3.registration(department = "HR")
+employee3.assignWork(work = "Conduct interviews")
+employee3.workOnTask(time_taken = "2 days") 
+
