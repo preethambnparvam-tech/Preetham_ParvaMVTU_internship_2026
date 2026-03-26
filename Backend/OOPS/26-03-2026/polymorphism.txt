@@ -1,0 +1,12 @@
+Polymorphism - Poly + morphism
+Poly - Many
+Morphism - Forms
+
+Same name but different forms
+
+Types of Polymorphism:
+1. Compile Time Polymorphism (Static Polymorphism)
+2. Runtime Polymorphism (Dynamic Polymorphism)
+3. Duck Typing Polymorphism
+4. Operator Overloading Polymorphism
+5. Polymorphism with Functions and Classes
