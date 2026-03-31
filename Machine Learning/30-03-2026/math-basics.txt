@@ -1,0 +1,26 @@
+1) Mean or Average:
+Example: 
+Data: [20, 30, 60]
+Mean = (20 + 30 + 60)/3 = 37
+
+2) Variance (Spread of Data):
+Low Variance & High Variance
+LV - Data close to Mean
+HV - Data Spread Out
+
+3) Standard Deviation (SD):
+Uses: Measures Consistency & Used in Normalization
+
+4) Correlation:
+Relationship b/w variables
++1 - Strong Positive
+0 - No Relation
+-1 - Strong Negative
+
+5) Probability (Decision Making):
+
+6) Linear Algebra
+ 
+7) Matrices
+
+8) Calculus

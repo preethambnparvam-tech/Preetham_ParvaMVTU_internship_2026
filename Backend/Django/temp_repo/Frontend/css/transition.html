@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer-box{
+            width: 500px;
+            height: 500px;
+            border: 5px solid blue;
+        }
+
+        .inner-box:hover{
+            background-color: lightblue;
+            transform: scale(1.2) translate(100px, 100px);
+            color: rgb(215, 62, 62);
+            border-radius: 50%;
+            font-size: 50px;
+        }
+
+        .inner-box{
+            width: 150px;
+            height: 150px;
+            background-color: darkblue;
+            font-size: 30px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-property: transform background-color;
+            transition-duration: 5s;
+            transition-timing-function: ease-in;
+            transition-delay: 2000ms;
+            /* transition: property duration timing-function delay */
+            transition: transform background-color 5s ease-in-out 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box move">Box</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'student_app/base.html' %}
+
+{% block content %}
+<h1 class="text-warning bg-danger text-center p-3">{% if form.instance.pk %} Edit Student Details {% else %}Student
+    Registration Form{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.as_p }}
+    </div>
+    <button class="btn {% if form.instance.pk %}btn-warning{% else %} btn-success{% endif %}"
+        type="submit">Submit</button>
+</form>
+{% endblock %}

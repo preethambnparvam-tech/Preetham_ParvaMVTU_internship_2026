@@ -1,0 +1,55 @@
+ML is a subset of AI where system learns from patterns of data and make predictions or decisions without being explicitly programmed.
+
+ML = Learning from Data -> Predict Outcomes
+
+Examples: 
+-> Email Spam Detection
+-> Content Recommendation
+-> Weather Report Prediction
+-> Cricket Score Prediction
+
+ML is a part or subset of AI
+
+AI is broader field of creating machines that can think, reason and act like humans.
+
+Examples:
+-> Voice Assistants (Siri, OK Google, Alexa)
+-> Chatbots (LLMs)
+-> Self-driving Cars (Tesla)
+
+Types of Machine Learning:
+1) Supervised Learning
+2) Unsupervised Learning
+3) Reinforcement Learning
+
+1) SL: Models learns from labeled data (input + correct output)
+
+Types of SL:
+Regression & Classification
+
+Examples:
+1) Email Spam Detection
+2) House Price / Stock Price Predictions
+
+2) Unsupervised Learning: Model finds patterns from unlabelled data
+
+Types:
+Clustering & Association
+
+Examples:
+1) Product Recommendation
+2) Customer Segmentation
+3) Music Playlist Recommendation
+
+3) Reinforcement Learning: Model learns using trial and error method with rewards and penalties
+
+Examples:
+1) AI Game Opponent (Chess, Carrom, Battle Royale Games)
+2) Self-driving Cars
+3) Robotics
+4) Stock Trading Bots
+
+Libraries used in ML:
+-> Numpy
+-> Pandas
+-> Matplotlib

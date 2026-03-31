@@ -1,0 +1,102 @@
+Django is going to work on the basis of MVT Architecture
+
+M - Model (Database or Tables)
+V - View (Backend or Logic)
+T - Template (Frontend or Design)
+
+Installing the virtual environment package for Django Project
+
+-> pip install virtualenv
+
+Create a new environment for Django Projects
+
+virtualenv name
+-> virtualenv djangoEnv
+or 
+-> python -m  virtualenv djangoEnv
+
+Activate the virtual environment
+
+name\Scripts\Activate
+-> djangoEnv\Scripts\activate
+
+Installing the django package to work with Django Projects
+
+-> pip install django==4.2
+
+Installing another package called mysqlclient for connecting the Django with MySQL database
+
+-> pip install mysqlclient
+
+Creating a new django project:
+
+django-admin startproject project_name
+-> django-admin startproject myproject
+
+Change the current path to project folder:
+
+cd project_name
+-> cd myproject
+
+Run the Django Server:
+
+-> python manage.py runserver
+
+To stop the server:
+
+-> Ctrl + C
+
+Make a new module or new application in the django project:
+
+python manage.py startapp app_name
+-> python manage.py startapp demo
+
+Open settings.py in main project and register the new module or app in INSTALLED_APPS section
+
+Create new files in new application folder(demo):
+New file: urls.py
+New file: forms.py
+New folder: templates/demo
+
+Created a new database as per the settings.py DB name
+
+Now create a migration file (preparation):
+
+-> python manage.py makemigrations
+
+Now run the migrations (create the tables):
+
+-> python manage.py migrate
+
+http://127.0.0.1:8000  => http:localhost:8000
+
+URL to try:
+Base Route:
+http://127.0.0.1:8000
+
+http://127.0.0.1:8000/greet
+http://127.0.0.1:8000/bye
+
+Breakdown of the link:
+
+Why http?
+Request & Response from client and server
+
+http - Hyper Text Transfer Protocol
+127.0.0.1 - Localhost (Local Machine)
+8000 - Default Port Number for Django
+
+Folder Structure:
+1) manage.py (Controller) - Main File which will control the Django Project, which we will use it to run the server, make migrations
+
+2) __init_.py - Acts like a constructor
+
+3) settings.py - We are going to manage multiple modules, maintain the DB connection and Email Credentials and any other third party credentials or package
+
+4) urls.py - Used for Navigation purpose using Routes
+
+5) models.py - Used for creating the DB schema (Table Structure) for the project
+
+6) views.py - Used for writing the Business or Backend Logic
+
+7) templates - Used for Designing Purpose
