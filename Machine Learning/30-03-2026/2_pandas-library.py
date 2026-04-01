@@ -50,3 +50,53 @@ print(df.iloc[0:1])
 print(df[df["temp"] > 35.5])
 
 print(df[(df["humidity"] > 40) & (df["humidity"] < 50)])
+
+# adding new column
+df["average-rainfall(%)"] = [20,23.5,15.3,26, 20, 23]
+print(df)
+
+# Update column
+df["humidity"] = df["humidity"] + 5
+print(df)
+
+# Isnull() - handling the missing values
+print(df.isnull())
+
+# dropna() - dropping the rows with missing values
+# df.dropna(inplace=True)
+# print(df)
+
+# fillna() - filling the missing values
+df.fillna(0, inplace=True)
+print(df)
+
+# describe() - gives the statistical summary of the data
+print(df.describe())
+
+# mean()
+print(df["humidity"].mean)
+
+# sum()
+print(df["humidity"].sum())
+
+# sort_values()
+print(df.sort_values("city"))
+print(df.sort_values("temp"))
+
+# group_by()
+data = {
+    "Dept": ["Dev", "Dev", "QA", "Dev", "QA"],
+    "Salary": [15000, 18000, 13500, 20000, 16000]
+    }
+
+df = pd.DataFrame(data)
+print(df.groupby("Dept").sum())
+
+# unique() - gives the unique values in the column
+print(df["Dept"].unique())
+
+# value_counts() - gives the count of each unique values in the column
+print(df["Dept"].value_counts())
+
+# to_csv()
+df.to_csv("new_data.csv", index=False)

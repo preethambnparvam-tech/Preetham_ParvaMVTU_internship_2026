@@ -100,3 +100,10 @@ Folder Structure:
 6) views.py - Used for writing the Business or Backend Logic
 
 7) templates - Used for Designing Purpose
+
+Make a new app called student_app
+-> python manage.py startapp student_app
+
+Daily Procedure:
+1) Run Xampp: Apache & MySQL
+2) Open vs Code Terminal, switch to cmd
