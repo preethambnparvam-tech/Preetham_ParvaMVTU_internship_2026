@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee List</title>
+</head>
+
+<body>
+    <h2>All Employees</h2>
+    <a href="{% url 'register_employee' %}">Register New Employee</a>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Joined</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>{{ emp.joined_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

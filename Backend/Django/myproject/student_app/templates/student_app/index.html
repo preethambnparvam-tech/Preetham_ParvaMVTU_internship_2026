@@ -1,5 +1,32 @@
 {% extends "student_app/base.html" %}
 
 {% block content %}
-<h1 class="text-danger bg-warning text-center p-3">Welcome to Student List Page</h1>
+<h1 class="text-danger bg-warning text-center p-3">Student List</h1>
+<table class="table table-striped table-warning table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Branch</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.branch }}</td>
+            <td>
+                <a href="{% url 'student_details' student.id %}" class="btn btn-info">View</a>
+                <a href="{% url 'update_details' student.id %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'remove_student' student.id %}" class="btn btn-danger">Delete</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

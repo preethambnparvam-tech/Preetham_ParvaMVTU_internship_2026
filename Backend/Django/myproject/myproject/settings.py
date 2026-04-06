@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'demo',
     # New app: student_app need to register
     'student_app',
+    # New app: employee_app need to register
+    'employee_app',
 ]
 
 MIDDLEWARE = [

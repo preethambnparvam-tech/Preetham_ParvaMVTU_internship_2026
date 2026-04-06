@@ -1,0 +1,308 @@
+﻿python : System check 
+identified some issues:
+At line:1 char:1
++ python manage.py 
+migrate > 
+migrate_error.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (S  
+  ystem check identifie   
+ d some issues::String    
+) [], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+
+WARNINGS:
+?: (mysql.W002) MariaDB 
+Strict Mode is not set 
+for database connection 
+'default'
+	HINT: MariaDB's Strict 
+Mode fixes many data 
+integrity problems in 
+MariaDB, such as data 
+truncation upon 
+insertion, by escalating 
+warnings into errors. It 
+is strongly recommended 
+you activate it. See: http
+s://docs.djangoproject.com
+/en/6.0/ref/databases/#mys
+ql-sql-mode
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, employee_app, sessions, student_app
+Running migrations:
+Traceback (most recent 
+call last):
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\utils.py", 
+line 103, in _execute
+    return 
+self.cursor.execute(sql)
+           
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\mysql\base.py",
+ line 78, in execute
+    return self.cursor.exe
+cute(query, args)
+           ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\MySQLdb\
+cursors.py", line 179, in 
+execute
+    res = self._query(mogr
+ified_query)
+          ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\MySQLdb\
+cursors.py", line 330, in 
+_query
+    db.query(q)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\MySQLdb\
+connections.py", line 
+286, in query
+    _mysql.connection.quer
+y(self, query)
+MySQLdb.OperationalError: 
+(1050, "Table 
+'django_content_type' 
+already exists")
+
+The above exception was 
+the direct cause of the 
+following exception:
+
+Traceback (most recent 
+call last):
+  File "C:\Users\Preet\One
+Drive\Desktop\Preetham_Par
+vaMVTU_internship_2026\Bac
+kend\Django\myproject\mana
+ge.py", line 22, in 
+<module>
+    main()
+  File "C:\Users\Preet\One
+Drive\Desktop\Preetham_Par
+vaMVTU_internship_2026\Bac
+kend\Django\myproject\mana
+ge.py", line 18, in main
+    execute_from_command_l
+ine(sys.argv)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\c
+ore\management\__init__.py
+", line 443, in 
+execute_from_command_line
+    utility.execute()
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\c
+ore\management\__init__.py
+", line 437, in execute
+    self.fetch_command(sub
+command).run_from_argv(sel
+f.argv)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\c
+ore\management\base.py", 
+line 420, in run_from_argv
+    self.execute(*args, 
+**cmd_options)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\c
+ore\management\base.py", 
+line 464, in execute
+    output = 
+self.handle(*args, 
+**options)
+             ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\c
+ore\management\base.py", 
+line 111, in wrapper
+    res = 
+handle_func(*args, 
+**kwargs)
+          ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\c
+ore\management\commands\mi
+grate.py", line 354, in 
+handle
+    post_migrate_state = 
+executor.migrate(
+                         
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\migrations\executor.py",
+ line 137, in migrate
+    state = self._migrate_
+all_forwards(
+            ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\migrations\executor.py",
+ line 169, in 
+_migrate_all_forwards
+    state = 
+self.apply_migration(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\migrations\executor.py",
+ line 257, in 
+apply_migration
+    state = 
+migration.apply(state, 
+schema_editor)
+            ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\migrations\migration.py"
+, line 132, in apply
+    operation.database_for
+wards(
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\migrations\operations\mo
+dels.py", line 100, in 
+database_forwards
+    schema_editor.create_m
+odel(model)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\base\schema.py"
+, line 513, in 
+create_model
+    self.execute(sql, 
+params or None)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\base\schema.py"
+, line 205, in execute
+    cursor.execute(sql, 
+params)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\utils.py", 
+line 122, in execute
+    return 
+super().execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\utils.py", 
+line 79, in execute
+    return self._execute_w
+ith_wrappers(
+           ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_data
+base_errors:
+         ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\utils.py", line 94, in 
+__exit__
+    raise dj_exc_value.wit
+h_traceback(traceback) 
+from exc_value
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\utils.py", 
+line 103, in _execute
+    return 
+self.cursor.execute(sql)
+           
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\django\d
+b\backends\mysql\base.py",
+ line 78, in execute
+    return self.cursor.exe
+cute(query, args)
+           ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\MySQLdb\
+cursors.py", line 179, in 
+execute
+    res = self._query(mogr
+ified_query)
+          ^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\MySQLdb\
+cursors.py", line 330, in 
+_query
+    db.query(q)
+  File "C:\Users\Preet\App
+Data\Roaming\Python\Python
+312\site-packages\MySQLdb\
+connections.py", line 
+286, in query
+    _mysql.connection.quer
+y(self, query)
+django.db.utils.Operationa
+lError: (1050, "Table 
+'django_content_type' 
+already exists")
+  Applying contenttypes.0001_initial...

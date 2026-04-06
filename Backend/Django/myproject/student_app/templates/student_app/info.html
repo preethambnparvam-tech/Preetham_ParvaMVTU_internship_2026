@@ -1,5 +1,35 @@
 {% extends "student_app/base.html" %}
 
 {% block content %}
-<h1 class="text-danger bg-warning text-center p-3">Welcome to Student Info Page</h1>
+<h1 class="text-danger bg-info text-center p-3">{{ student.name }} - Student Information</h1>
+<table class="table table-warning">
+    <tr>
+        <th>Name</th>
+        <td>{{ student.name }}</td>
+    </tr>
+    <tr>
+        <th>DOB</th>
+        <td>{{ student.dob }}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{ student.email }}</td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>{{ student.gender }}</td>
+    </tr>
+    <tr>
+        <th>Branch</th>
+        <td>{{ student.branch }}</td>
+    </tr>
+    <tr>
+        <th>State</th>
+        <td>{{ student.state }}</td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>{{ student.address }}</td>
+    </tr>
+</table>
 {% endblock %}
