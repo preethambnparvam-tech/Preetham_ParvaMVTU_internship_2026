@@ -1,0 +1,5 @@
+django-admin startproject django_orm_methods
+
+cd django_orm_methods
+
+python manage.py startapp orm_app

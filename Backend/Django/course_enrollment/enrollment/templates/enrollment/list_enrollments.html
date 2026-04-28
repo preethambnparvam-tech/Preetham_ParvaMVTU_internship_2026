@@ -1,0 +1,31 @@
+{% extends 'enrollment/base.html' %}
+
+{% block content %}
+<h1 class="text-danger bg-warning text-center p-3">Student List</h1>
+<table class="table table-striped table-warning table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Phone Number</th>
+            <th>Enrolled Course</th>
+            <th>Mode of Training</th>
+            <th>Registration Date</th>
+            <th>Course Duration</th>
+            <th>Course Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for enrollment in enrollments %}
+        <tr>
+            <td>{{ enrollment.student.name }}</td>
+            <td>{{ enrollment.student.phone }}</td>
+            <td>{{ enrollment.course.name }}</td>
+            <td>{{ enrollment.mode }} Mode</td>
+            <td>{{ enrollment.date_enrolled }}</td>
+            <td>{{ enrollment.course.duration }} weeks</td>
+            <td>{{ enrollment.course.fees }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
