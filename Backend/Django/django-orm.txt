@@ -1,5 +1,32 @@
+djangoEnv\Scripts\activate
+
 django-admin startproject django_orm_methods
 
 cd django_orm_methods
 
-python manage.py startapp orm_app
+python manage.py startapp practice
+
+# To add the fake data for practicing
+pip install faker
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+In practice folder, make a new folder called management
+In management folder, one more folder called commands
+# practice/management/commands
+
+python manage.py seed_data
+
+# To practice Django ORM methods in Command Prompt or Shell 
+pip install shell
+
+python manage.py shell
+
+New change:
+
+Update the old model code with new code shared
+
+change the seed_data code with new code:
+practice/management/commands/seed_data.py
