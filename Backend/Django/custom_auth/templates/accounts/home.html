@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to Custom Auth System</h1>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.first_name }} {{ user.last_name }}!</p>
+        <p>USN: {{ user.usn }}</p>
+        <p>College: {{ user.college }}</p>
+        <p>Branch: {{ user.branch }}</p>
+        <p>Semester: {{ user.semester }}</p>
+        {% if user.profile_picture %}
+            <img src="{{ user.profile_picture.url }}" alt="Profile Picture" width="150">
+        {% endif %}
+    {% else %}
+        <p><a href="{% url 'register' %}">Register here</a></p>
+    {% endif %}
+</body>
+</html>
