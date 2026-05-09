@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load erp_tags %}
+{% block title %}Timetable{% endblock %}
+{% block page_title %}Timetable{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <form method="get" class="d-flex gap-2">
+    <select name="dept" class="form-select form-select-sm">
+      <option value="">All Departments</option>
+      {% for d in departments %}<option value="{{ d.pk }}" {% if dept == d.pk|stringformat:"s" %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
+    </select>
+    <select name="sem" class="form-select form-select-sm">
+      <option value="">All Semesters</option>
+      {% for s in semesters %}<option value="{{ s }}" {% if sem == s|stringformat:"s" %}selected{% endif %}>Sem {{ s }}</option>{% endfor %}
+    </select>
+    <button type="submit" class="btn btn-primary btn-sm">Filter</button>
+  </form>
+  <div class="d-flex gap-2">
+    <a href="{% url 'timetable:timeslot_create' %}" class="btn btn-outline-secondary btn-sm"><i class="bi bi-clock me-1"></i>Add Time Slot</a>
+    <a href="{% url 'timetable:create' %}" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg me-1"></i>Add Entry</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body p-0 overflow-auto">
+    <table class="table table-bordered mb-0 text-center" style="min-width:900px;">
+      <thead class="table-dark">
+        <tr>
+          <th style="width:120px;">Time / Day</th>
+          {% for day in days %}<th>{{ day }}</th>{% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for slot in time_slots %}
+        <tr>
+          <td class="fw-semibold small bg-light">{{ slot.label }}</td>
+          {% for day in days %}
+            {% with schedule|dict_get:day as day_schedule %}
+              {% with day_schedule|dict_get:slot.pk as entry %}
+                <td {% if entry %}style="background:#e8f4ff;"{% endif %}>
+                  {% if entry %}
+                    <div class="fw-semibold small">{{ entry.course.code }}</div>
+                    <div class="text-muted" style="font-size:.75rem;">{{ entry.faculty.get_full_name|default:"—" }}</div>
+                    {% if entry.room %}<div style="font-size:.7rem;" class="badge bg-secondary">{{ entry.room }}</div>{% endif %}
+                    <a href="{% url 'timetable:delete' entry.pk %}" class="btn btn-sm btn-outline-danger py-0 mt-1" style="font-size:.65rem;">×</a>
+                  {% else %}
+                    <span class="text-muted" style="font-size:.8rem;">—</span>
+                  {% endif %}
+                </td>
+              {% endwith %}
+            {% endwith %}
+          {% endfor %}
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" class="text-center text-muted py-4">No time slots defined. <a href="{% url 'timetable:timeslot_create' %}">Add time slots first.</a></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block page_title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-7">
+    <div class="card">
+      <div class="card-header py-3">{{ title }}</div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3"><label class="form-label small fw-semibold">Student</label>{{ form.student }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Fee Structure (optional)</label>{{ form.fee_structure }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Description</label>{{ form.description }}</div>
+          <div class="row">
+            <div class="col-md-6 mb-3"><label class="form-label small fw-semibold">Amount (₹)</label>{{ form.amount }}</div>
+            <div class="col-md-6 mb-3"><label class="form-label small fw-semibold">Due Date</label>{{ form.due_date }}</div>
+          </div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Remarks</label>{{ form.remarks }}</div>
+          {% if form.errors %}<div class="alert alert-danger">{{ form.errors }}</div>{% endif %}
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'fees:fee_list' %}" class="btn btn-outline-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

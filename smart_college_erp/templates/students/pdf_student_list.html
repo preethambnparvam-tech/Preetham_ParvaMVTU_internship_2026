@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 11px; margin: 0; padding: 20px; }
+    h1 { color: #1a3c5e; font-size: 18px; margin-bottom: 4px; }
+    .subtitle { color: #666; font-size: 11px; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: #1a3c5e; color: white; padding: 7px 8px; text-align: left; font-size: 10px; }
+    td { padding: 6px 8px; border-bottom: 1px solid #eee; }
+    tr:nth-child(even) { background: #f8f9fa; }
+    .footer { margin-top: 20px; font-size: 10px; color: #888; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Smart College ERP - Student Report</h1>
+  <div class="subtitle">ParvaM Consul-tech Pvt. Ltd. | Generated: {% now "d M Y H:i" %}</div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Roll No.</th><th>Name</th><th>Department</th>
+        <th>Semester</th><th>Email</th><th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in students %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ s.roll_number }}</td>
+        <td>{{ s.get_full_name }}</td>
+        <td>{{ s.department.code }}</td>
+        <td>{{ s.semester }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.phone }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="footer">Total: {{ students|length }} students | Smart College ERP</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}Remove Entry{% endblock %}
+{% block page_title %}Remove Timetable Entry{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card border-danger">
+      <div class="card-header bg-danger text-white">Confirm Removal</div>
+      <div class="card-body text-center py-4">
+        <p>Remove this timetable entry?</p>
+        <h6 class="fw-bold">{{ entry }}</h6>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+          <form method="post">{% csrf_token %}<button type="submit" class="btn btn-danger">Yes, Remove</button></form>
+          <a href="{% url 'timetable:view' %}" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

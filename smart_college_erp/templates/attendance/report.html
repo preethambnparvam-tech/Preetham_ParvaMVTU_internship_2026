@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% block title %}Attendance Report{% endblock %}
+{% block page_title %}Attendance Report{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex gap-2">
+    <form method="get" class="d-flex gap-2">
+      <select name="course" class="form-select form-select-sm">
+        <option value="">All Courses</option>
+        {% for c in courses %}<option value="{{ c.pk }}" {% if request.GET.course == c.pk|stringformat:"s" %}selected{% endif %}>{{ c.code }} - {{ c.name }}</option>{% endfor %}
+      </select>
+      <button type="submit" class="btn btn-primary btn-sm">Filter</button>
+    </form>
+  </div>
+  <a href="{% url 'attendance:export_csv' %}" class="btn btn-outline-success btn-sm"><i class="bi bi-download me-1"></i>Export CSV</a>
+</div>
+
+{% if low_attendance %}
+<div class="alert alert-warning">
+  <i class="bi bi-exclamation-triangle-fill me-2"></i>
+  <strong>{{ low_attendance.count }} students</strong> have attendance below 75% and may be detained.
+</div>
+{% endif %}
+
+<div class="card">
+  <div class="card-body p-0">
+    <table class="table table-hover mb-0">
+      <thead class="table-light">
+        <tr>
+          <th class="ps-3">Roll No.</th>
+          <th>Student Name</th>
+          <th>Course</th>
+          <th>Total Classes</th>
+          <th>Attended</th>
+          <th>Percentage</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in summaries %}
+        <tr>
+          <td class="ps-3"><code>{{ s.student.roll_number }}</code></td>
+          <td>{{ s.student.get_full_name }}</td>
+          <td>{{ s.course.code }}</td>
+          <td>{{ s.total_classes }}</td>
+          <td>{{ s.attended }}</td>
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <div class="progress flex-grow-1" style="height:6px;">
+                <div class="progress-bar {% if s.percentage >= 75 %}bg-success{% elif s.percentage >= 60 %}bg-warning{% else %}bg-danger{% endif %}"
+                     style="width:{{ s.percentage }}%"></div>
+              </div>
+              <span class="small fw-semibold">{{ s.percentage|floatformat:1 }}%</span>
+            </div>
+          </td>
+          <td>
+            {% if s.percentage >= 75 %}
+              <span class="badge bg-success-subtle text-success">Good</span>
+            {% elif s.percentage >= 60 %}
+              <span class="badge bg-warning-subtle text-warning">At Risk</span>
+            {% else %}
+              <span class="badge bg-danger-subtle text-danger">Detained</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" class="text-center text-muted py-4">No attendance data yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

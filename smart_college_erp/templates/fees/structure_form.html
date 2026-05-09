@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block title %}Add Fee Structure{% endblock %}
+{% block page_title %}Add Fee Structure{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header py-3">Fee Structure</div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3"><label class="form-label small fw-semibold">Fee Name</label>{{ form.name }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Department</label>{{ form.department }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Semester</label>{{ form.semester }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Amount (₹)</label>{{ form.amount }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Academic Year</label>{{ form.academic_year }}</div>
+          <div class="mb-3 form-check">{{ form.is_active }}<label class="form-check-label small ms-1">Active</label></div>
+          {% if form.errors %}<div class="alert alert-danger">{{ form.errors }}</div>{% endif %}
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'fees:structure_list' %}" class="btn btn-outline-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

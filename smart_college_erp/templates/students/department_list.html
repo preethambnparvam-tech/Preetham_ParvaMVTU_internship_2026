@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% block title %}Departments{% endblock %}
+{% block page_title %}Departments{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-end mb-3">
+  <a href="{% url 'students:department_create' %}" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg me-1"></i>Add Department</a>
+</div>
+<div class="card">
+  <div class="card-body p-0">
+    <table class="table table-hover mb-0">
+      <thead class="table-light">
+        <tr><th class="ps-3">Code</th><th>Name</th><th>HOD</th><th>Students</th><th>Courses</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        {% for dept in departments %}
+        <tr>
+          <td class="ps-3"><code>{{ dept.code }}</code></td>
+          <td class="fw-semibold">{{ dept.name }}</td>
+          <td>{{ dept.hod.get_full_name|default:"—" }}</td>
+          <td>{{ dept.students.count }}</td>
+          <td>{{ dept.courses.count }}</td>
+          <td>
+            <a href="{% url 'students:department_edit' dept.pk %}" class="btn btn-sm btn-outline-secondary py-0">Edit</a>
+            <a href="{% url 'students:department_delete' dept.pk %}" class="btn btn-sm btn-outline-danger py-0">Delete</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-center text-muted py-4">No departments. <a href="{% url 'students:department_create' %}">Add one.</a></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

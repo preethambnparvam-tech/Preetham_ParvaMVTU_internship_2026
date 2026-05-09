@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% block title %}Create Session{% endblock %}
+{% block page_title %}Create Attendance Session{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header py-3">New Attendance Session</div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3"><label class="form-label small fw-semibold">Course</label>{{ form.course }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Faculty</label>{{ form.faculty }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Date</label>{{ form.date }}</div>
+          <div class="row">
+            <div class="col-6 mb-3"><label class="form-label small fw-semibold">Start Time</label>{{ form.start_time }}</div>
+            <div class="col-6 mb-3"><label class="form-label small fw-semibold">End Time</label>{{ form.end_time }}</div>
+          </div>
+          {% if form.errors %}<div class="alert alert-danger">{{ form.errors }}</div>{% endif %}
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Create & Generate QR</button>
+            <a href="{% url 'attendance:session_list' %}" class="btn btn-outline-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% block title %}Add Time Slot{% endblock %}
+{% block page_title %}Add Time Slot{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header py-3">New Time Slot</div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3"><label class="form-label small fw-semibold">Start Time</label>{{ form.start_time }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">End Time</label>{{ form.end_time }}</div>
+          <div class="mb-3"><label class="form-label small fw-semibold">Label (optional)</label>{{ form.label }}</div>
+          {% if form.errors %}<div class="alert alert-danger">{{ form.errors }}</div>{% endif %}
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'timetable:view' %}" class="btn btn-outline-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
